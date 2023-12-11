@@ -1,6 +1,6 @@
 """
 An offline image gallery that displays a random image from your SD card
-and updates on a timer.
+and updates on a timer, shuffling through all images before repeating.
 
 Copy images to the root of your SD card by plugging it into a computer.
 

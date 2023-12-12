@@ -153,10 +153,9 @@ while True:
 
     # Sleep or wait for a bit
     sleep_time_min = UPDATE_INTERVAL - minute
-    if hour >= SLEEP_TIME_HR and hour < WAKE_TIME_HR:
-        deep_sleep_offset = int(math.fabs(SLEEP_TIME_HR - WAKE_TIME_HR))
+    if SLEEP_TIME_HR <= hour < WAKE_TIME_HR - 1:
+        deep_sleep_offset = int(math.fabs(WAKE_TIME_HR - hour)) - 1
         sleep_time_min += deep_sleep_offset * 60
-        print(f"Deep sleep for {sleep_time_min} minutes")
     print(f"Sleeping for {sleep_time_min} minutes")
     inky_frame.sleep_for(sleep_time_min)
 
